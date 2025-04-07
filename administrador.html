@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Administrador - Massagens</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <div class="background-container2">
+        <div class="containerr">
+            <div class="logo">
+                <img src="https://i.servimg.com/u/f66/20/49/80/91/design19.png" alt="Logo da empresa" />
+            </div>
+
+            <h2>Painel do Administrador</h2>
+
+            <!-- NOVO PAINEL COM DOIS QUADROS -->
+            <div class="painel-agendamentos">
+                <div class="box-agendamentos">
+                    <h2>Agendamentos Ativos</h2>
+                    <div id="lista-agendamentos">
+                        <!-- Agendamentos ativos aparecerão aqui -->
+                    </div>
+                </div>
+
+                <div class="box-agendamentos">
+                    <h2>Agendamentos Cancelados</h2>
+                    <div id="lista-cancelados">
+                        <!-- Agendamentos cancelados aparecerão aqui -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- POPUP DE EDIÇÃO -->
+    <div id="editarPopup" class="editar-popup" style="display: none;">
+        <div class="editar-box">
+            <h3>Editar Agendamento</h3>
+            <input type="text" id="editarNome" placeholder="Nome" />
+            <input type="email" id="editarEmail" placeholder="Email" />
+            <input type="text" id="editarData" placeholder="Data (DD/MM/AAAA)" />
+            <input type="text" id="editarHorario" placeholder="Horário" />
+            <button onclick="salvarEdicao()">Salvar</button>
+            <button onclick="fecharEdicao()">Cancelar</button>
+        </div>
+    </div>
+
+    <!-- POPUP DE CONFIRMAÇÃO DE CANCELAMENTO -->
+    <div id="popupConfirmacaoCancelamento" class="popup-overlay" style="display: none;">
+        <div class="popup-box">
+            <h3>Você tem certeza que deseja cancelar?</h3>
+            <button onclick="confirmarCancelamento()">Sim</button>
+            <button onclick="fecharPopupCancelamento()">Não</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

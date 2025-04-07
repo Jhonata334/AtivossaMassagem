@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <title>Agendamento de Massagem</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <button class="btn-adm-topo" onclick="abrirLogin()">Administrador</button>
+
+    <div class="background-container">
+        <div class="container">
+            <div class="logo">
+                <img src="./Logo.png" alt="Logo">
+            </div>
+            <h1>Massagem</h1>
+            <h2>Marque seu horário aqui ao lado</h2>
+
+
+            <img src="https://i.servimg.com/u/f66/20/49/80/91/image14.png">
+        </div>
+
+        <div class="container2">
+            <input type="text" id="nome" placeholder="Seu nome">
+            <input type="email" id="email" placeholder="Seu e-mail">
+
+            <div id="calendario-container">
+                <h3 id="mes-atual"></h3>
+                <div class="dias-semana">
+                    <div>Dom</div>
+                    <div>Seg</div>
+                    <div>Ter</div>
+                    <div>Qua</div>
+                    <div>Qui</div>
+                    <div>Sex</div>
+                    <div>Sáb</div>
+                </div>
+                <div id="calendario" class="calendario"></div>
+            </div>
+
+            <select id="horario">
+                <option value="">Selecione o horário</option>
+                <option value="09:00">09:00</option>
+                <option value="09:20">09:20</option>
+                <option value="09:40">09:40</option>
+                <option value="10:00">10:00</option>
+                <option value="10:20">10:20</option>
+                <option value="10:40">10:40</option>
+                <option value="11:00">11:00</option>
+                <option value="11:20">11:20</option>
+                <option value="11:40">11:40</option>
+                <option value="12:00">12:00</option>
+                <option value="13:00">13:00</option>
+                <option value="13:20">13:20</option>
+                <option value="13:40">13:40</option>
+                <option value="14:00">14:00</option>
+                <option value="14:20">14:20</option>
+                <option value="14:40">14:40</option>
+                <option value="15:00">15:00</option>
+                <option value="15:20">15:20</option>
+                <option value="15:40">15:40</option>
+                <option value="16:00">16:00</option>
+                <option value="16:20">16:20</option>
+            </select>
+            <button onclick="agendar()">Agendar</button>
+        </div>
+    </div>
+
+    <!-- Popup de Confirmação -->
+    <div id="popupConfirmacao" class="popup-overlay" style="display: none;">
+        <div class="popup-box">
+            <h3>Confirmar Agendamento</h3>
+            <p id="textoConfirmacao"></p>
+            <button onclick="confirmarAgendamento()">Confirmar</button>
+            <button onclick="fecharPopup()">Cancelar</button>
+        </div>
+    </div>
+
+    <!-- Login ADM -->
+    <div id="popupLogin" class="popup">
+        <div class="login-box">
+            <h2>Login do Administrador</h2>
+            <label for="usuario">Usuário:</label>
+            <input type="text" id="usuario" placeholder="Digite seu usuário" />
+            <label for="senha">Senha:</label>
+            <input type="password" id="senha" placeholder="Digite sua senha" />
+            <button onclick="entrarComoAdmin()" id="botao-login">Entrar</button>
+            <button onclick="cancelarLogin()">Cancelar</button>
+        </div>
+    </div>
+
+    <div id="mensagem-confirmacao" class="mensagem-oculta"></div>
+    <div id="alerta-personalizado" class="alerta"></div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
